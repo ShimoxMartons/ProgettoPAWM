@@ -56,6 +56,7 @@ function shidden(id1,id2){
 }
 
 function printrank(){
+  clearranking();
   var type = document.getElementById("gamemode").value;
   var numb = document.getElementById("numnumber").value;
   var bitn = document.getElementById("bitnumber").value;
@@ -73,5 +74,11 @@ function printrank(){
     document.getElementById(""+i+"0").innerHTML = child.getAttribute("name");
     document.getElementById(""+i+"1").innerHTML = child.getAttribute("time");
   }
+}
 
+function clearranking(){
+  for(var i = 0;i <10; i++){
+    document.getElementById(""+i+"0").innerHTML = "";
+    document.getElementById(""+i+"1").innerHTML = "";
+  }
 }
