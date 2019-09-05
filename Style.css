@@ -1,0 +1,179 @@
+body {
+  background-image: url('../../img/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  font-weight: 300;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Helvetica neue, roboto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h1 {
+  font: 48px bold;
+  font-family: 'Lucida Console';
+  font-style: oblique;
+  text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+  color: #ffffff;
+}
+
+option{
+  background: #09536E;
+  color: white;
+  align-items: center;
+}
+
+#results,#next,#help,#play,#backtoname0,#backtoname1,#backtoname2,#backtomenu,#backtomenu3,#check{
+  text-shadow: 2px 0 0 black, -2px 0 0  black, 0 2px 0  black, 0 -2px 0  black, 1px 1px  black, -1px -1px 0  black, 1px -1px 0  black, -1px 1px 0  black;
+  background: #01796F;
+	color: #fff;
+	box-shadow: 0 4px #116062;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+  width: 100px;
+  outline: 0;
+  border-radius: 8px;
+  padding: 5px;
+  font: 18px "Arvo";
+}
+
+#backtomenu3:active,#showrank:active,#results:active,#next:active,#help:active,#play:active,#backtoname0:active,#backtoname1:active,#backtoname2:active,#backtomenu:active,#check:active{
+  box-shadow: 0 0 #116062;
+	top: 6px;
+}
+
+#name,#converter,#choosenum,#choosebit,#answer{
+  display:block;
+  width: 300px;
+  padding: 3px 0 3px 0;
+  font: 24px "Arvo";
+  color: #377D6A;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  outline: none;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px rgba(255,255,255,0.2);
+  position: relative;
+}
+
+#msgctrlname{
+  font: 22px;
+  font-family: "Lucida Console";
+  color: #DB244F;
+  text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+}
+
+#question{
+  font-size: 24px;
+  font-family: 'Lucida Console';
+  color: #ffffff;
+  text-shadow: 2px 0 0 black, -2px 0 0  black, 0 2px 0  black, 0 -2px 0  black, 1px 1px  black, -1px -1px 0  black, 1px -1px 0  black, -1px 1px 0  black;
+}
+#stopwatch{
+  font-size: 24px;
+  font-family: 'Lucida Console';
+  background: #084b66;
+  color: #041620;
+  padding: 5px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 3px solid #041620;
+}
+
+#ctrlanswer{
+  font-size: 20px;
+  font-family: 'Lucida Console';
+}
+
+#gamemode,#numnumber,#bitnumber{
+  padding: 3px 0 3px 0;
+  font: 18px "Arvo";
+  color: #377D6A;
+  background: rgba(0,0,0,0.3);
+  border: none;
+  outline: none;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px rgba(255,255,255,0.2);
+  position: relative;
+}
+
+#showrank{
+  text-shadow: 2px 0 0 black, -2px 0 0  black, 0 2px 0  black, 0 -2px 0  black, 1px 1px  black, -1px -1px 0  black, 1px -1px 0  black, -1px 1px 0  black;
+  background: #01796F;
+  color: #fff;
+  box-shadow: 0 4px #116062;
+  -webkit-transition: none;
+  -moz-transition: none;
+  transition: none;
+  width: 120px;
+  outline: 0;
+  border-radius: 8px;
+  padding: 3px 0 3px 0;
+  font: 18px "Arvo";
+}
+
+th{
+  text-shadow: 2px 0 0 white, -2px 0 0  white, 0 2px 0  white, 0 -2px 0  white, 1px 1px  white, -1px -1px 0  white, 1px -1px 0  white, -1px 1px 0  white;
+  color:#000;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Arvo";
+  padding: 0 15px 10px 0;
+  text-align: center;
+}
+
+td{
+  text-align: center;
+  font-size: 18px;
+  padding: 0 15px 5px 0;
+}
+
+h2{
+  text-shadow: 2px 0 0 white, -2px 0 0  white, 0 2px 0  white, 0 -2px 0  white, 1px 1px  white, -1px -1px 0  white, 1px -1px 0  white, -1px 1px 0  white;
+  color:#000;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: "Arvo";
+  padding: 0 0 3px 0;
+}
+
+#guide{
+  font-size: 18px;
+  font-family: "Arvo";
+  text-align: justify;
+}
+
+#aid{
+  padding: 20px;
+  background-color: #084b66;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 3px solid #fff;
+}
+
+#showresult{
+  text-shadow: 2px 0 0 white, -2px 0 0  white, 0 2px 0  white, 0 -2px 0  white, 1px 1px  white, -1px -1px 0  white, 1px -1px 0  white, -1px 1px 0  white;
+  color:#000;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: "Arvo";
+}
