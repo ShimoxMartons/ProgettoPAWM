@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TheHBDgame</title>
+    <link href="Style.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <script src="Controller.js"></script>
+
+  <script src="Model.js"></script>
+  <script src="Timer.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <body>
+    <div id="main">
+      <div id="inputname" align="center" style="display: block">
+        <h1> Enter your name </h1>
+        <input id="name" type="text" size="18" maxlength="20" autocomplete="off" style="text-align:center;" onkeypress="checkenter()"/>
+        <br>
+        <p id="msgctrlname" style="color:#DC143C; font-weight: bold;"></p>
+        <br>
+        <br>
+        <input id="help"type="button" onclick="shidden('inputname','aid')" value="Help"/>
+        <input id="results" type="button" onclick="shidden('inputname','ranking')" value="Ranking"/>
+        <input id="next" type="button" onclick="checkname()" value="Next"/>
+      </div>
+
+
+      <div id="aid" align = "center" style="display:none">
+        <h2> The HBD Game </h2>
+        <p id = "guide">
+          <br>
+          The game consist in a series of number conversion (10,15,25) from <br>
+          8, 12 or 16 bit with the following mode: binary to decimal, <br>
+          decimal to binary, binary to hexadecimal and hexadecimal to binary. <br>
+          We will consider the time you take to convert all the number for the mode <br>
+          you choosed and then you'll be able to see the ranking table of the best <br>
+          10 for each type of the conversion. All you have to do is:<br>
+          1.  Insert the name which you want use during the game. <br>
+          2.  Choose the type of the conversion <br>
+              Choose the numbers to convert <br>
+              Choose the bit quantity of your numbers. <br>
+          3.  Now, just have fun! <br>
+          Here you can find different guides that explain how to do the conversion: <br>
+          Decimal -> Binary: <a href="http://www.ripmat.it/mate/p/pb/pbfd.html" style="color:#7FFF00">Click Here!</a><br>
+          Binary -> Decimal: <a href="http://www.ripmat.it/mate/p/pb/pbfe.html" style="color:#7FFF00">Click Here!</a><br>
+          Binary -> Hexadecimal: <a href="http://www.ripmat.it/mate/p/pb/pbib.html" style="color:#7FFF00">Click Here!</a><br>
+          Binary -> Hexadecimal: <a href="http://www.ripmat.it/mate/p/pb/pbib.html" style="color:#7FFF00">Click Here!</a><br>
+          Hope this helped and you enjoyed the game! <br><br>
+        </p>
+        <input id="backtoname0" type="button" value="Back" onclick="shidden('aid','inputname')"/>
+      </div>
+
+      <div id="ranking" align = "center" style="display:none">
+        <select id="gamemode" style="width:200px;">
+          <option value="0">Decimal -> Binary
+          <option value="1">Binary -> Deciaml
+          <option value="2">Binary -> Hexadecimal
+          <option value="3">Hexadecimal -> Binary
+        </select>
+        <select id="numnumber" style="width:120px;">
+          <option value="2">2 numbers
+          <option value="10">10 numbers
+          <option value="15">15 numbers
+          <option value="25">25 numbers
+        </select>
+        <select id="bitnumber" style="width:80px;">
+          <option value="8">8 bit
+          <option value="12">12 bit
+          <option value="16">16 bit
+        </select>
+        <input id="showrank" type="button" value="Show Ranking" onclick="printrank()"/>
+        <br><br>
+        <table id="rankingtable">
+          <tr>
+          	<th>Position</th>
+            <th>Player Name</th>
+            <th>Time</th>
+          </tr>
+          <tr>
+          	<td>1°</td>
+            <td id = "00"></td>
+            <td id = "01"></td>
+          </tr>
+          <tr>
+          	<td>2°</td>
+            <td id = "10"></td>
+            <td id = "11"></td>
+          </tr>
+          <tr>
+            <td>3°</td>
+            <td id = "20"></td>
+            <td id = "21"></td>
+          </tr>
+          <tr>
+            <td>4°</td>
+            <td id = "30"></td>
+            <td id = "31"></td>
+          </tr>
+          <tr>
+            <td>5°</td>
+            <td id = "40"></td>
+            <td id = "41"></td>
+          </tr>
+          <tr>
+            <td>6°</td>
+            <td id = "50"></td>
+            <td id = "51"></td>
+          </tr>
+          <tr>
+            <td>7°</td>
+            <td id = "60"></td>
+            <td id = "61"></td>
+          </tr>
+          <tr>
+            <td>8°</td>
+            <td id = "70"></td>
+            <td id = "71"></td>
+          </tr>
+          <tr>
+            <td>9°</td>
+            <td id = "80"></td>
+            <td id = "81"></td>
+          </tr>
+          <tr>
+            <td>10°</td>
+            <td id = "90"></td>
+            <td id = "91"></td>
+          </tr>
+        </table>
+        <br><br><br>
+        <input id="backtoname1" type="button" value="Back" onclick="shidden('ranking','inputname')"/>
+      </div>
+
+
+      <div id="inputgame" align="center" style="display: none" >
+
+        <select id="converter">
+          <option value="0">Binary -> Decimal
+          <option value="1">Decimal -> Binary
+          <option value="2">Binary -> Hexadecimal
+          <option value="3">Hexadecimal -> Binary
+        </select>
+        <br>
+        <br>
+        <select id="choosenum">
+          <option value ="2">2 numbers
+          <option value="10">10 numbers
+          <option value="15">15 numbers
+          <option value="25">25 numbers
+        </select>
+        <br>
+        <br>
+        <select id="choosebit">
+          <option value="8">8 bit
+          <option value="12">12 bit
+          <option value="16">16 bit
+        </select>
+        <br>
+        <br>
+        <input id="backtoname2" type="button" value="Back" onclick="shidden('inputgame','inputname');"/>
+        <input id="play" type="button" value="Play" onclick="shidden('inputgame','thegame'),menu('converter','choosenum','choosebit')"/>
+      </div>
+
+      <div id="thegame" align="center" style="display:none">
+        <p id = "stopwatch"></p>
+        <br>
+        <br>
+        <p id="question"> </p>
+        <input id="answer" type="text" size="18" maxlength="20" autocomplete="off" style="text-align:center;"/>
+        <br>
+        <p id="ctrlanswer"> </p>
+        <br>
+        <input id="check" type="button" value="Check"/>
+        <br><br>
+        <input id="backtomenu" type="button" value="Back" onclick="ripristino(),shidden('thegame','inputgame')"/>
+      </div>
+
+      <div id="yourtime" align="center" style="display:none">
+        <p id="showresult"></p>
+        <br>
+        <input id="backtomenu3" type="button" value="Ok" onclick="shidden('yourtime','inputgame')"/>
+    </div>
+
+  </body>
+</html>
